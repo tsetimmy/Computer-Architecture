@@ -1,0 +1,227 @@
+\documentclass[12pt]{article}
+\usepackage[top=0.71in, bottom=0.71in, left=0.71in, right=0.71in]{geometry}
+\usepackage{courier}
+\usepackage{enumitem}
+\usepackage{upquote}
+\usepackage{alltt}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{fancyvrb}
+\usepackage{color}
+\usepackage{setspace}
+
+%\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{tabularx,ragged2e,booktabs,caption}
+\newcolumntype{C}[1]{>{\Centering}m{#1}}
+\renewcommand\tabularxcolumn[1]{C{#1}}
+
+%\newcommand\verbbf[1]{\textcolor[rgb]{0,0,1}{\textbf{$\blacksquare$ #1}}}
+\newcommand\verbbf[1]{\textcolor[rgb]{0,0,1}{\textbf{#1}}}
+
+\linespread{1.5}
+
+
+
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+
+\makeatletter
+\newcommand*{\textalltt}{}
+\DeclareRobustCommand*{\textalltt}{%
+  \begingroup
+    \let\do\@makeother
+    \dospecials
+    \catcode`\\=\z@
+    \catcode`\{=\@ne
+    \catcode`\}=\tw@
+    \verbatim@font\@noligs
+    \@vobeyspaces
+    \frenchspacing
+    \@textalltt
+}
+\newcommand*{\@textalltt}[1]{%
+    #1%
+  \endgroup
+}
+\makeatother
+
+
+
+\usepackage[svgnames]{xcolor} % Required to specify font color
+
+\newcommand*{\plogo}{\fbox{$\mathcal{PL}$}} % Generic publisher logo
+
+
+
+\newcommand*{\titleAT}{\begingroup % Create the command for including the title page in the document
+\newlength{\drop} % Command for generating a specific amount of whitespace
+\drop=0.1\textheight % Define the command as 10% of the total text height
+
+\rule{\textwidth}{1pt}\par % Thick horizontal line
+\vspace{2pt}\vspace{-\baselineskip} % Whitespace between lines
+\rule{\textwidth}{0.4pt}\par % Thin horizontal line
+
+\vspace{\drop} % Whitespace between the top lines and title
+\centering % Center all text
+{ 
+{\Huge ECE552, Fall 2014}\\[0.5\baselineskip] % Title line 1
+{\Large Lab 1 Report}\\[0.75\baselineskip]} % Title line 2
+%{\Huge \LaTeX ~Templates}} % Title line 3
+
+\vspace{0.25\drop} % Whitespace between the title and short horizontal line
+\rule{0.3\textwidth}{0.4pt}\par % Short horizontal line under the title
+\vspace{\drop} % Whitespace between the thin horizontal line and the author name
+
+{\Large \textsc{Timmy Rong Tian Tse (998182657)}}\par % Author name
+{\Large \textsc{Brian Aguirre (998528213)}}\par % Author name
+
+\vfill % Whitespace between the author name and publisher text
+%{\large \textcolor{Red}{\plogo}}\\[0.5\baselineskip] % Publisher logo
+%{\large \textsc{the publisher}}\par % Publisher
+
+\vspace*{\drop} % Whitespace under the publisher text
+
+\rule{\textwidth}{0.4pt}\par % Thin horizontal line
+\vspace{2pt}\vspace{-\baselineskip} % Whitespace between lines
+\rule{\textwidth}{1pt}\par % Thick horizontal line
+
+\endgroup}
+%\thispagestyle{empty}
+%\vfill
+%
+%\begin{center}
+%        \Huge{\bf ECE461, Fall 2014}\\[1.5cm]
+%        
+%        \large{\bf Lab 1 and 2 Report}\\
+%        \vspace{1in}
+%        \textbf{Timmy Rong Tian Tse (998182657) and Yuan Xue (998275851)}\\[1ex]
+%        \scriptsize{\today}
+%\end{center}
+%
+%\vfill
+%\clearpage
+
+
+
+
+
+
+
+
+
+\thispagestyle{empty}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\begin{document}
+
+
+
+
+
+\titleAT % This command includes the title page
+\clearpage
+\setcounter{page}{1}
+
+
+
+
+
+
+%\thispagestyle{empty}
+%\vfill
+%
+%\begin{center}
+%        \Huge{\bf ECE461, Fall 2014}\\[1.5cm]
+%        
+%        \large{\bf Lab 1 and 2 Report}\\
+%        \vspace{1in}
+%        \textbf{Timmy Rong Tian Tse (998182657) and Yuan Xue (998275851)}\\[1ex]
+%        \scriptsize{\today}
+%\end{center}
+%
+%\vfill
+%\clearpage
+
+
+%\vspace*{\fill}
+%\begingroup
+%\centering
+%\LARGE ECE461, Fall 2014
+%
+%\LARGE Lab 1 and 2\\
+%
+%\LARGE Timmy Rong Tian Tse (998182657) and Yuan Xue (998275851)
+%\endgroup
+%\vspace*{\fill}
+%
+%\clearpage
+
+%\begin{center}
+%\end{center}
+
+
+\begin{singlespace}
+
+Using the \texttt{/cad2/ece552f/benchmarks/gcc.eio} benchmark, our group received a CPI of 1.6812 for question 1 (an increase of 68.12 percent) and a CPI of 1.3975 for question 2 (an increase of 39.75 percent). In obtaining these numbers, we used the following mathematical derivations:
+
+$$
+CPI = 1+1\times\Big(\frac{x_{1}}{N}\Big)+2\times\Big(\frac{x_{2}}{N}\Big)+\cdots+n\times\Big(\frac{x_{n}}{N}\Big)
+$$
+
+where $n$ is the number of stalls, $x_{n}$ is the number of instructions that contain a hazard requiring $n$ number of stalls to resolve and finally, $N$ is the total number of instructions. All of these parameters are relative to one single program.\\
+
+In question 1 with the 5-stage pipeline with no forwarding, we have concluded that the only real hazards that we need to take into consideration is the RAW hazards. However, depending on when the dependent register is used, a RAW hazard can be resolved either with two stalls or one stall. The two stalls case occurs when the dependent register is immediately read from after it was written to. Since the dependent instruction needs to decode on the cycle that the previous instruction writes back, the dependent instruction needs to wait two cycles. On the other hand, the one stall case occurs when the dependent register is used two instructions later. Since the dependent instruction arrives two cycles later, it only needs to stall one more cycle to resolve the hazard. Because there is no forwarding and bypassing, we can ignore the first corner case that was mentioned in Lab 0. Using this methodology, we received 13930369 one stall instructions, 88182314 two stall instructions and finally, 279373007 total instructions. Using these statistics, we computed $CPI$ as follows:
+
+$$
+CPI = 1+1\times\Big(\frac{13930369}{279373007}\Big)+2\times\Big(\frac{88182314}{279373007}\Big)
+    \approx 1.6812
+$$
+
+In question 2 with the 6-stage pipeline with two cycle executes and full bypassing, the real hazards remain to be RAW hazards. Due to full bypassing, a RAW hazard now requires only one stall to resolve with LTU being an exception. In a LTU, if the loaded value is immediately read from, then it requires two stalls to resolve otherwise if there is one non-dependent instruction in between, only one stall is required. We received 70807412 one stall instructions and 20126394 two stall instructions. $CPI$ is as follows:
+
+$$
+CPI = 1+1\times\Big(\frac{70807412}{279373007}\Big)+2\times\Big(\frac{20126394}{279373007}\Big)
+    \approx 1.3975
+$$
+
+In our microbenchmark code, we inlined assembly code into our C program to directly test the validity of our code. We used the \texttt{-O0} flag in our compilation with the hopes that our logic will not be optimized away by the compiler. In assembly code, we have three loops each with 30000 iterations that directly generate a two stall RAW hazards. Since we looped this three times, we would expect the result to be 3*30000 = 90000 two stall hazards in our output and indeed, that is what out output reflected. Similarly, we have two loops in our assembly code that generate a one stall RAW hazards. Again, our output reflected the expected 2*30000 = 60000 one stall hazards. Note that we ensured the total number of one stall hazards were different from the total number of two stall hazards for the reason of differentiating between the two. In our verification, we also changed the loop counters for testing and again, our code output reflected this change.
+
+\end{singlespace}
+
+\end{document}
+

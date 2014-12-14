@@ -1,0 +1,58 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CBP_TRACER	tracer.cc	/^CBP_TRACER::CBP_TRACER(char *traceFileName){$/;"	f	class:CBP_TRACER
+CBP_TRACER	tracer.h	/^class CBP_TRACER{$/;"	c
+CBP_TRACE_RECORD	tracer.h	/^  CBP_TRACE_RECORD(){$/;"	f	class:CBP_TRACE_RECORD
+CBP_TRACE_RECORD	tracer.h	/^class CBP_TRACE_RECORD{$/;"	c
+CFLAGS	Makefile	/^CFLAGS = -g -o3 -Wall$/;"	m
+COUNTER	utils.h	27;"	d
+CXXFLAGS	Makefile	/^CXXFLAGS = -g -o3 -Wall$/;"	m
+CheckHeartBeat	tracer.cc	/^void CBP_TRACER::CheckHeartBeat(){$/;"	f	class:CBP_TRACER
+FAILURE	utils.h	33;"	d
+GetNextRecord	tracer.cc	/^bool  CBP_TRACER::GetNextRecord(CBP_TRACE_RECORD *rec){$/;"	f	class:CBP_TRACER
+GetNumCondBranch	tracer.h	/^  UINT64 GetNumCondBranch(){ return numCondBranch; }$/;"	f	class:CBP_TRACER
+GetNumInst	tracer.h	/^  UINT64 GetNumInst(){ return numInst; }$/;"	f	class:CBP_TRACER
+GetPrediction_2bitsat	predictor.cc	/^bool GetPrediction_2bitsat(UINT32 PC) {$/;"	f
+GetPrediction_2level	predictor.cc	/^bool GetPrediction_2level(UINT32 PC) {$/;"	f
+GetPrediction_openend	predictor.cc	/^bool GetPrediction_openend(UINT32 PC) {$/;"	f
+INT32	utils.h	25;"	d
+InitPredictor_2bitsat	predictor.cc	/^void InitPredictor_2bitsat() {$/;"	f
+InitPredictor_2level	predictor.cc	/^void InitPredictor_2level() {$/;"	f
+InitPredictor_openend	predictor.cc	/^void InitPredictor_openend() {$/;"	f
+NOT_TAKEN	utils.h	30;"	d
+OPTYPE_BRANCH_COND	tracer.h	/^  OPTYPE_BRANCH_COND      =6,$/;"	e	enum:__anon1
+OPTYPE_BRANCH_UNCOND	tracer.h	/^  OPTYPE_BRANCH_UNCOND    =5,$/;"	e	enum:__anon1
+OPTYPE_CALL_DIRECT	tracer.h	/^  OPTYPE_CALL_DIRECT      =3,$/;"	e	enum:__anon1
+OPTYPE_INDIRECT_BR_CALL	tracer.h	/^  OPTYPE_INDIRECT_BR_CALL =7,$/;"	e	enum:__anon1
+OPTYPE_LOAD	tracer.h	/^  OPTYPE_LOAD             =0, $/;"	e	enum:__anon1
+OPTYPE_MAX	tracer.h	/^  OPTYPE_MAX              =8$/;"	e	enum:__anon1
+OPTYPE_OP	tracer.h	/^  OPTYPE_OP               =2,$/;"	e	enum:__anon1
+OPTYPE_RET	tracer.h	/^  OPTYPE_RET              =4,$/;"	e	enum:__anon1
+OPTYPE_STORE	tracer.h	/^  OPTYPE_STORE            =1,$/;"	e	enum:__anon1
+OpType	tracer.h	/^}OpType;$/;"	t	typeref:enum:__anon1
+PC	tracer.h	/^  UINT32   PC;$/;"	m	class:CBP_TRACE_RECORD
+SUCCESS	utils.h	34;"	d
+SatDecrement	utils.h	/^static inline UINT32 SatDecrement(UINT32 x)$/;"	f
+SatIncrement	utils.h	/^static inline UINT32 SatIncrement(UINT32 x, UINT32 max)$/;"	f
+TAKEN	utils.h	31;"	d
+UINT32	utils.h	24;"	d
+UINT64	utils.h	26;"	d
+UTILS_H	utils.h	2;"	d
+UpdatePredictor_2bitsat	predictor.cc	/^void UpdatePredictor_2bitsat(UINT32 PC, bool resolveDir, bool predDir, UINT32 branchTarget) {$/;"	f
+UpdatePredictor_2level	predictor.cc	/^void UpdatePredictor_2level(UINT32 PC, bool resolveDir, bool predDir, UINT32 branchTarget) {$/;"	f
+UpdatePredictor_openend	predictor.cc	/^void UpdatePredictor_openend(UINT32 PC, bool resolveDir, bool predDir, UINT32 branchTarget) {$/;"	f
+_PREDICTOR_H_	predictor.h	2;"	d
+_TRACER_H_	tracer.h	2;"	d
+branchTaken	tracer.h	/^  bool     branchTaken;$/;"	m	class:CBP_TRACE_RECORD
+branchTarget	tracer.h	/^  UINT32   branchTarget;$/;"	m	class:CBP_TRACE_RECORD
+lastHeartBeat	tracer.h	/^  UINT64 lastHeartBeat;$/;"	m	class:CBP_TRACER
+main	main.cc	/^int main(int argc, char* argv[]){$/;"	f
+numCondBranch	tracer.h	/^  UINT64 numCondBranch;$/;"	m	class:CBP_TRACER
+numInst	tracer.h	/^  UINT64 numInst;        $/;"	m	class:CBP_TRACER
+objects	Makefile	/^objects = tracer.o predictor.o main.o $/;"	m
+opType	tracer.h	/^  OpType   opType;$/;"	m	class:CBP_TRACE_RECORD
+traceFile	tracer.h	/^  FILE *traceFile;$/;"	m	class:CBP_TRACER
